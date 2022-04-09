@@ -1,0 +1,4 @@
+pip install python 
+pip install django
+djngo-admin startproject myfirstproject
+python manage.py runserver
