@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Calendly</title>
+    <style>
+
+      /* Button used to open the contact form - fixed at the bottom of the page */
+      .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+      }
+      
+      /* The popup form - hidden by default */
+      .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+      }
+      
+      /* Add styles to the form container */
+      .form-container {
+        max-width: 500px;
+        padding: 0px;
+        background-color: white;
+      }
+      
+      /* Full-width input fields */
+      .form-container input[type=text], .form-container input[type=email] {
+        width: 100%;
+        padding: 15px;
+        margin: 0px 0 0px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+      
+      /* When the inputs get focus, do something */
+      .form-container input[type=text]:focus, .form-container input[type=email]:focus ,.form-container input[type=contact]:focus,.form-container input[type=appointment]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Set a style for the submit/login button */
+      .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      }
+      
+      /* Add a red background color to the cancel button */
+      .form-container .cancel {
+        background-color: red;
+      }
+      
+      /* Add some hover effects to buttons */
+      .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="form-popup" id="myForm">
+      <form  method="post" action="" class="form-container">
+        {% csrf_token %}
+       <marquee> <h1>AppointmentForm</h1></marquee>
+    
+        <label><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required>
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required >
+        <label for="contact"><b>Contact</b></label>
+        <input type="text" placeholder="Enter Contact" name="contact" required >
+        <label ><b>Appointment With</b></label>
+        <input type="text" placeholder="Enter name" name="appointment" required >
+        <label for="date"><b>Date</b></label>
+        <input type="date" placeholder="Enter Date" name="date" required>
+        <label ><b>Start Time</b></label>
+        <input type="time" placeholder="Enter time" name="stime" required>
+        <label ><b>End Time</b></label>
+        <input type="time" placeholder="Enter time" name="etime" required>
+    
+        <button type="submit" class="btn">Appointment</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    
+    <section class="bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-12 py-1">
+            <p> We created our cab booking app to help you to find the most dependable and highest quality cab services . <span class="s-cross"> <i class="fa fa-times" aria-hidden="true"></i> </span></p>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">Navbar scroll</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'availiablity' %}">Availiablity</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'intergation' %}">Intergation</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Help
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-icon" href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+
+    <section class="mt-4 py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-outline-primary rounded-pill">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp; Back </button>
+          </div>
+
+          <div class="col-md-6">
+            <p> <b>Create new event type</b> </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light py-4">
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-md-1">
+            <img src="{% static 'images/1.png' %}" class="img-fluid" alt="pitcher">
+          </div>
+            
+            <div class="col-md-9">
+            <p> One-on-one</p>
+            <p> Let an invite pick a time to meet with you. </p>
+          </div>
+          
+
+          <div class="col-md-2">
+            <a type="button" class="btn btn-primary rounded-pill" href="http://127.0.0.1:8000/meeting/">Start Meeting</a>
+        
+          </div>
+        </div>
+
+        <div class="row py-4">
+          <div class="col-md-1">
+            <img src="{% static 'images/2.png' %}" class="img-fluid" alt="pitcher">
+          </div>
+            
+            <div class="col-md-9">
+            <p> One-on-many</p>
+            <p> Let an invite pick a time to meet with you. </p>
+          </div>
+          
+
+          <div class="col-md-2">
+            <a type="button" class="btn btn-primary rounded-pill" href="http://127.0.0.1:8000/meeting/">Start Meeting</a>
+            <!-- <button  type="button" class="btn btn-primary rounded-pill">
+              Create </button> -->
+          </div>
+        </div>
+
+        <div class="row py-4">
+          <div class="col-md-1">
+            <img src="{% static 'images/3.png' %}" class="img-fluid" alt="pitcher">
+          </div>
+            
+            <div class="col-md-9">
+            <p> One-on-One</p>
+            <p> Let an invite pick a time to meet with you. </p>
+          </div>
+          
+
+          <div class="col-md-2">
+            <a type="button" class="btn btn-primary rounded-pill" href="http://127.0.0.1:8000/meeting/">Start Meeting</a>
+          </div>
+        </div>
+
+        <div class="row py-4">
+          <div class="col-md-1">
+            <img src="{% static 'images/4.png' %}" class="img-fluid" alt="pitcher">
+          </div>
+            
+            <div class="col-md-9">
+            <p> One-on-one</p>
+            <p> Let an invite pick a time to meet with you. </p>
+          </div>
+          
+
+          <div class="col-md-2">
+            <a type="button" class="btn btn-primary rounded-pill" href="http://127.0.0.1:8000/meeting/">Start Meeting</a>
+          </div>
+        </div>
+
+        <div class="row py-5">
+          <p> More way to meet </p>
+          <div class="col-md-6">
+            <div class="s-border">
+            <img src="{% static 'images/5.png' %}" class="img-fluid" alt="pitcher">
+            <br />
+            <h6> One-off-meeting </h6>
+            <p> Invite someone to pick a time to meet with you </p>
+            <br />
+            <button type="button" class="btn btn-outline-primary rounded-pill"> Create </button>
+          </div>
+          </div>
+            
+            <div class="col-md-6">
+              <div class="s-border">
+                <img src="{% static 'images/6.png' %}" class="img-fluid" alt="pitcher">
+                <br />
+              <h6> Meeting poll </h6>
+              <p> Invite someone to pick a time to meet with you </p>
+              <br />
+              <button type="button" class="btn btn-outline-primary rounded-pill"> Create </button>
+              <button class="open-button" onclick="openForm()">Appointment Form</button>
+            </div>
+      </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      </script>
+  </body>
+</html>

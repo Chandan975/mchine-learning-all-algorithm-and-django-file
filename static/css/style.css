@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+p{
+	margin-bottom: 1px;
+}
+.s-cross i{
+    margin-left: 21em;
+    font-size: 14px;
+}
+.nav-icon i{
+    background: #bfbfbf;
+    padding: 9px;
+    border-radius: 18px;
+}
+.pageicon i {
+    background: #b5b5b5;
+    padding: 14px;
+    border-radius: 21px;
+    position: absolute;
+    margin-left: -61px;
+}
+.pageicon {
+    margin-left: 54px;
+}
+.line-bottom {
+    margin: 0 0;
+}
+.card-width {
+    width: 54%;
+}
+.button-right-s {
+    margin-left: 48%;
+}
+.page-menu ul li{
+    display: inline-block;
+}
+.page-menu ul li a{
+    color: #000;
+    text-decoration: none;
+}
+.card-body a{
+    text-decoration: none;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    border-top: 6px solid #0d6efd;
+}
+.s-border {
+    border: 1px solid #b7b7b7;
+    padding: 26px;
+    margin-top: 9px;
+}
+.border-r {
+    border: 1px solid #bdbdbd;
+    padding: 26px;
+    border-radius: 11px 11px 0 0;
+}
+.btn-border{
+    background: #f8f9fa;
+    border: none;
+}
+.border-for-sides {
+    border-left: 1px solid #bdbdbd;
+    border-right: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+}
+.borderone-side {
+    border-right: 1px solid #bdbdbd;
+}
+.flexible-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.distancebt {
+    width: 11%;
+}
+.distancebt1 {
+    width: 77%;
+}
+.distancebt2 {
+    width: 6%;
+}
+.distancebt3 {
+    width: 6%;
+}
+.top-line {
+    border-top: 4px solid #000;
+}
+.top-line ul li {
+    list-style: none;
+    margin-top: 11px;
+}
+.top-line ul li a{
+    color: #000;
+    text-decoration: none;
+}
+.white-bg  {
+    background: #fff;
+    padding: 36px;
+}
+.box-icon-image {
+    border: 1px solid #efefef;
+    padding: 16px;
+    width: 29%;
+    line-height: 26px;
+    margin: 14px;
+}
+.box-faxiblity {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box-faxiblity img{
+    margin: 4px;
+}
+.bg-text-color {
+    background: #1a4400;
+    color: #fff;
+    padding: 4px;
+    width: 18%;
+}
+.box-icon-image1 {
+    border: 1px solid #efefef;
+    padding: 16px;
+    line-height: 26px;
+    margin: 14px;
+}
+
+
+
+@media(max-width: 686px){
+    .box-icon-image {
+        width: 81%;
+    }
+    .bg-text-color{
+        width: 26%;
+    }
+}

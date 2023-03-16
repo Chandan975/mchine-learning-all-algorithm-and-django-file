@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+         
+</head>
+<body>
+
+<table border = "1">
+    <tr>
+         <th> ID </th>
+         <th> NAME </th>
+         <th> EMAIL </th>
+         <th> SALARY </th>
+         <th> PHONE   </th>
+    </tr>
+    {% for i in output %}
+    <tr>
+        <td>{{i.id}} </td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.contact}}</td>
+        <td>{{i.appointment}}</td>
+        <th>{{i.date}}</th>
+        <th>{{i.stime}}</th>
+        <th>{{i.etime}}</th>
+    </tr>
+    {% endfor %}
+</table>
+<table id = "tab1">
+<tr>
+    <td> {%for display in output %}
+     <input type="checkbox" value="{{display.id}}" />{{display.id}}
+     <input type="checkbox" value="{{display.name}}" />{{display.name}}
+     <input type="checkbox" value="{{display.email}}" /> {{display.email}}
+     <input type="checkbox" value="{{display.contact}}" />{{display.contact}}
+     <input type="checkbox" value="{{display.appointment}}" /> ="{{display.appointment}}
+     <input type="checkbox" value="{{display.stime}}" /> {{display.stime}}
+     <input type="checkbox" value="{{display.appointment}}" /> {{display.appointment}}
+                    {% endfor %}
+               </td>
+
+</tr>
+</table>
+
+<input id="but1" type="button" value="display records" onclick="getvalues()"/>     
+     <b id="displayvalues"></b>
+
+</body>
+<script>
+    function getvalues()
+    {
+         let selected = new Array();
+         var chckbox = document.getElementById("tab1");
+         //var selchk = chckbox.getElementsByTagName("input");
+        // alert(selchk);
+     //     for(var i=0; i<selchk.length;i++)
+     //     {
+     //          if(selchk[i].checked)
+     //          {
+     //               selected.push(selchk[i].value);
+     //          }
+     //     }
+     //     if(selected.length> 0)
+     //     {
+     //          document.getElementById("displayvalues").innerHTML= selected;
+     //          document.getElementById("displayvalues").innerHTML= selected;
+
+     //     }
+         
+    };
+</script>
+
+</html>

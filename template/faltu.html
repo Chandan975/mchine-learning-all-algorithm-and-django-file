@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        HTML DOM Input Image value Property
+    </title>
+</head>
+<body style="text-align:center;">
+    <h1 style="color:green;">
+        GeeksForGeeks
+    </h1>
+    <h2>DOM Input Image value Property</h2>
+    <button onclick="my_geek()">
+        <input id="myImage"
+               value="myGeeks"
+               type="image"
+               src=
+"https://media.geeksforgeeks.org/wp-content/uploads/gfg-40.png"
+               alt="Submit"
+               formaction="#"
+               formtarget="#"
+               formenctype="text/plain"
+               width="48"
+               height="48">
+    </button>
+    <h2 id="Geek_h"
+        style="color:green;">
+ 
+    </h2>
+    <script>
+        function my_geek() {
+ 
+            // Return value of Input Image field
+            var txt = document.getElementById(
+                "myImage").value;
+            document.getElementById(
+                "Geek_h").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Calendly</title>
+  </head>
+  <body>
+    <section class="bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-12 py-1">
+            <p> We created our cab booking app to help you to find the most dependable and highest quality cab services . <span class="s-cross"> <i class="fa fa-times" aria-hidden="true"></i> </span></p>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">Navbar scroll</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'availiablity' %}">Availiablity</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'intergation' %}">Intergation</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Help
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-icon" href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <!-- <li><hr class="dropdown-divider"></li> -->
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+
+    <section class="mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                My Calendly
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-end">
+            <a href="{% url 'create' %}"><button type="button" class="btn btn-primary  rounded-pill"> <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;Create </button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="shadow">
+        <div class="container page-menu">
+            <ul>
+              <li>
+                <a class="active" aria-current="page" href="#">Event type</a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Scheduled type</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'workflows' %}">Workflows</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'rotuing' %}">Rotuing forms</a>
+              </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-4 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p class="bg-text-color"> GETTING STARTED </p>
+            <h2 class="py-2"> Save time with workflows </h2>
+            <p> We created our taxi to help you to find the most dependable and highest quality taxi services, anytime and anywhere. All our drivers are uniformed and fully licensed. We created our taxi to help you to find the most dependable and highest quality taxi services, anytime and anywhere. All our drivers are uniformed and fully licensed.</p>
+          </div>
+
+          <div class="col-md-4">
+            <img src="{% static 'images/image.png' %}" class="img-fluid" alt="pitcher">
+          </div> 
+
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-8">
+            <p> Start of the one workflow or create your won </p>
+          </div>
+          <div class="col-md-4 text-end">
+            <button type="button" class="btn btn-outline-primary rounded-pill"> Create your won workflow </button>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/inv1.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/inv1.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/inv2.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/inv2.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/mo1.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-6">
+            <div class="box-icon-image1">
+              <img src="{% static 'images/mo2.png' %}" class="img-fluid" alt="pitcher">
+              <h4> API in web hooks </h4>
+                <p> Build custom integratons with calandy data </p>
+                <div class="text-end py-2">
+                  <button type="button" class="btn btn-primary rounded-pill">
+              Create </button>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 py-2 text-center">
+            <button type="button" class="btn btn-outline-primary rounded-pill"> Show more </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

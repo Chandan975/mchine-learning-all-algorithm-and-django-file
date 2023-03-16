@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting</title>
+</head>
+<body>
+    <h3>Appointment Details</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>contact</th>
+                <th>Appointment With</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+    
+    <tbody>
+        {% for i in output %}
+        <tr>
+            <td>{{i.id}} </td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.appointment}}</td>
+            <th>{{i.date}}</th>
+            <th>{{i.stime}}</th>
+            <th>{{i.etime}}</th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table><br>
+<a href="https://meeting.fivestarlink.net/">Start Meeting</a>
+
+</body>
+</html>
